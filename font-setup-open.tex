@@ -1,0 +1,78 @@
+\ProvidesFile{font-setup-open.tex}[2024/09/04]
+\usepackage{titlesec}
+
+% Main CJK font
+\setCJKmainfont[
+    BoldFont = {LXGWWenKai-Bold.ttf},
+    ItalicFont = {LXGWBright-Italic.ttf}
+]{LXGWWenKai-Regular.ttf}
+
+% Sans-serif CJK font
+\setCJKsansfont[
+    BoldFont = {LXGWNeoXiHei.ttf}
+]{LXGWNeoXiHei.ttf}
+
+% Monospace CJK font
+\setCJKmonofont[
+    BoldFont = {LXGWWenKaiMono-Bold.ttf}
+]{LXGWWenKaiMono-Regular.ttf}
+
+% Kai font
+\setCJKfamilyfont{kai}[
+    BoldFont = {LXGWWenKai-Bold.ttf},
+    ItalicFont = {LXGWBright-Italic.ttf}
+]{LXGWBright-Italic.ttf}
+
+% Song font
+\setCJKfamilyfont{song}[
+    BoldFont = {LXGWNeoZhiSong.ttf},
+    ItalicFont = {LXGWNeoZhiSong.ttf}
+]{LXGWNeoZhiSong.ttf}
+
+% Fangsong font (using ZhiSong as a substitute)
+\setCJKfamilyfont{fangsong}[
+    BoldFont = {LXGWNeoZhiSong.ttf},
+    ItalicFont = {LXGWNeoZhiSong.ttf}
+]{LXGWNeoZhiSong.ttf}
+
+% Hei font
+\setCJKfamilyfont{hei}[
+    BoldFont = {LXGWNeoXiHei.ttf},
+    ItalicFont = {LXGWNeoXiHei.ttf}
+]{LXGWNeoXiHei.ttf}
+
+\setCJKfamilyfont{hei2}{LXGWFasmartGothic.ttf}
+
+% Section font
+\setCJKfamilyfont{sectionfont}[
+    BoldFont = {LXGWWenKai-Bold.ttf}
+]{LXGWWenKai-Bold.ttf}
+
+% Proof font
+\setCJKfamilyfont{pffont}{LXGWBright-MediumItalic.ttf}
+
+% Emphasis font
+\setCJKfamilyfont{emfont}[
+    BoldFont = {LXGWFasmartGothic.ttf}
+]{LXGWFasmartGothic.ttf}
+
+\defaultfontfeatures{Ligatures=TeX}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+% Font switch commands
+\newcommand\kaishu{\CJKfamily{kai}}
+\newcommand\songti{\CJKfamily{song}}
+\newcommand\heiti{\CJKfamily{hei}}
+\newcommand\thmheiti{\CJKfamily{hei2}}
+\newcommand\fangsong{\CJKfamily{fangsong}}
+\renewcommand{\em}{\bfseries\CJKfamily{emfont}}
+\newcommand{\sectionzhfont}{\CJKfamily{sectionfont}}
+
+% Section formatting
+\titleformat{\section}
+  {\sectionzhfont\Large\bfseries}{\thesection}{1em}{}
+
+% Subsection formatting
+\titleformat{\subsection}
+  {\sectionzhfont\large\bfseries}{\thesubsection}{1em}{}

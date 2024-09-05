@@ -1,0 +1,135 @@
+\ProvidesPackage{color-tufte}[2023/04/19 Color Tufte]
+
+%%%%%%%%%%%%%%%%
+% Requirements %
+%%%%%%%%%%%%%%%%
+
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{framed} 
+\RequirePackage{amsthm} 
+\RequirePackage[many]{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%
+%  Environments  %
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% THEOREM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theroem}[section]
+\tcolorboxenvironment{theorem}{
+	boxrule=0pt,
+	boxsep=2pt,
+	colback={White!90!Red},
+	enhanced jigsaw, 
+	borderline west={2pt}{0pt}{Red},
+	sharp corners,
+	before skip=10pt,
+	after skip=10pt,
+	breakable,
+	}
+%%%%%%%%%%%%%%% LEMMA %%%%%%%%%%%%%%%
+	\newtheorem{lemma}[theorem]{Lemma}
+
+\tcolorboxenvironment{lemma}{
+  boxrule=0pt,
+  boxsep=2pt,
+  colback={White!90!Dandelion},
+  enhanced jigsaw, 
+  borderline west={2pt}{0pt}{Dandelion},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  breakable,
+}
+%%%%%%%%%%%%% DEFINITION %%%%%%%%%%%%%%%
+\newtheorem{definition}{Definition}[section]
+
+\tcolorboxenvironment{definition}{
+  boxrule=0pt,
+  boxsep=2pt,
+  colback={White!90!Cerulean},
+  enhanced jigsaw, 
+  borderline west={2pt}{0pt}{Cerulean},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  breakable,
+}
+%%%%%%%%%%%%%% COROLLARY %%%%%%%%%%%%%%%%%%
+\newtheorem{corollary}[theorem]{Corollary}
+
+\tcolorboxenvironment{corollary}{
+	boxrule=0pt,
+	boxsep=2pt,
+	colback={White!90!Yellow},
+	enhanced jigsaw, 
+	borderline west={2pt}{0pt}{Yellow},
+	sharp corners,
+	before skip=10pt,
+	after skip=10pt,
+	breakable,
+	}
+%%%%%%%%%%%%% PROPOSITIONS %%%%%%%%%%%%%%%%%%%
+	\newtheorem{proposition}[theorem]{Proposition}
+
+\tcolorboxenvironment{proposition}{
+	boxrule=0pt,
+	boxsep=2pt,
+	colback={green!10},
+	enhanced jigsaw, 
+	borderline west={2pt}{0pt}{Green},
+	sharp corners,
+	before skip=10pt,
+	after skip=10pt,
+	breakable,
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\tcolorboxenvironment{proof}{
+	%boxrule=0pt,
+	%boxsep=2pt,
+	%blanker,
+	%borderline west={2pt}{0pt}{NavyBlue!80!white},
+	%before skip=10pt,
+	%after skip=10pt,
+	%left=12pt,
+	%right=12pt,
+	%breakable,
+	%}
+
+%%%%%%%% Problem %%%%%%%%%%%%%
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% Problem %%%%%%%%%%%%%
+%\newtheorem{prob}{Problem}
+%\newenvironment{problem}
+%{\colorlet{shadecolor}{White!90!Orange}\begin{shaded}\begin{prob}}
+%		{\end{prob}\end{shaded}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% use pffont
+\newtheoremstyle{proofstyle}
+  {}{}
+	{\CJKfamily{pffont}}{}
+  {\bfseries}{}
+  {.5em}
+  {}
+\theoremstyle{proofstyle}
+%%%%%%%%%%%%% SKETCH OF PROOF %%%%%%%%%%%%%%%%%%%
+\newtheorem*{sketchproof}{Sketch of Proof}
+
+%%%%%%%%%%%%% FORMAL PROOF %%%%%%%%%%%%%%%%%%%
+\newtheorem*{formalproof}{Formal Proof}
+\tcolorboxenvironment{formalproof}{
+    boxrule=0pt,
+    boxsep=2pt,
+    colback={White!90!Blue},
+    enhanced jigsaw, 
+    borderline west={2pt}{0pt}{Blue},
+    sharp corners,
+    before skip=10pt,
+    after skip=10pt,
+    breakable,
+    fontupper=\prooffont,
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,282 @@
+% CustomMathCommands.sty
+%
+% This package contains a collection of custom math commands and environments
+% for various mathematical topics, including algebra, complex analysis,
+% measure theory, topology, manifold theory, and more.
+\ProvidesPackage{mypackage}
+\newcommand{\ok}{\mathcal{O}_{\K }}
+\newcommand{\EL}{\mathbb{E}^1}
+\newcommand{\EP}{\mathbb{E}^2}
+\newcommand{\EN}{\mathbb{E}^n}
+\newcommand{\afn}{\mathbb{A}}%affine
+\newcommand{\lcs}{\mathcal{Z}}%locus
+\newcommand{\rdl}{\mathcal{I}}%radical ideal
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\spt}{\supseteq}
+\DeclareMathOperator{\res}{res}
+\newcommand{\bsts}[2]
+{%big subset
+\left\{#1 \middle| 
+\begin{gathered}
+#2 
+\end{gathered} 
+\right\}
+}
+\newcommand{\basis}[8]{% v m v b1 b2
+\begin{center}
+	\begin{tikzcd} 
+	#1  \ar[r,"#2 (\cdot )"]& #3 \\
+	#6 \ar[u,"#4 "] 
+	\ar[r,"#8 "]
+	 & #7   \ar[u,"#5 "].
+	\end{tikzcd}
+\end{center}
+}
+\DeclareMathOperator{\Nm}{N}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\mSpec}{mSpec}
+%%%%%%%%%%%%%Complex Analysis Package%%%%%%%%%%%%%
+\newcommand{\D}{\mathbb{D}}%the unit disc
+
+%%%%%%%%%%%%%Complex Analysis Package%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%Algebra Package%%%%%%%%%%%%%
+\newcommand{\IP}[2]{\langle #1,#2 \rangle}
+\newcommand{\veb}{\mathbf{B}}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}\newcommand{\sg}{\leq}
+\newcommand{\nsg}{\unlhd}
+%%%%%%%%%%%%%Algebra Package%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%Measure Package%%%%%%%%%%%%%
+\newcommand{\MM}{\mathfrak{M}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\CC}{\mathcal{C}}
+%%%%%%%%%%%%%Measure Package%%%%%%%%%%%%%
+\newcommand{\case}{[label=\textbf{Case \arabic*:}]}
+\newcommand{\stp}{[label=\textbf{Case \arabic*:}]}
+
+%%%%%%%%%%%%%Topology Package%%%%%%%%%%%%%
+\newcommand{\aaa}{\mathscr{A}}
+\newcommand{\TT}{\mathscr{T}}
+\newcommand{\PP}{\mathscr{P}}
+\newcommand{\BB}{\mathscr{B}}
+\newcommand{\FF}{\mathscr{F}}
+\newcommand{\UU}{\mathscr{U}}
+\newcommand{\VV}{\mathscr{V}}
+\newcommand{\WW}{\mathscr{W}}
+\newcommand{\sss}{\mathcal{S}}
+\newcommand{\sbt}{\subseteq}%subset
+\newcommand{\sts}[2]{\left\{#1\middle|#2\right\}}
+\newcommand{\unn}[3]{\underset{#1 \in #2}{\bigcup}#3} %union
+\newcommand{\inn}[3]{\underset{#1 \in #2}{\bigcap}#3} %intersection
+%\newcommand{\ar}[2]{[#1,"#2"]}
+\newcommand{\apn}[1]{\ar[#1,"open ",symbol=\sbteq]}%arrow open subset
+%%%%%%%%%%%%%Topology Package%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%Manifold Package%%%%%%%%%%%%%
+\newcommand{\kk}{$C^k $}
+\newcommand{\cy}{$C^\infty $}
+\newcommand{\ck}{$C^k $}
+\newcommand{\pl}[2]{\frac{\partial #1}{\partial #2}}%partial derivative
+\newcommand{\nti}[4]{\int_{#1}^{#2}#3\,\mathrm{d}#4}%integration
+\newcommand{\bv}[2]{(\frac{\partial }{\partial x^{#1 }} )^{#2 }}% basis vector field w.r.t a coordinate
+\newcommand{\cv}[1]{(\frac{\partial }{\partial t} )^{#1 }}% curve vector field 
+\newcommand{\dbv}[2]{(\mathrm{d}x^{#1 } )_{#2 }}% dual basis vector field w.r.t a coordinate
+\newcommand{\dfv}[1]{(\mathrm{d}f )_{#1 }}% Dual Vector field of a Function w.r.t a coordinate
+%%%%%%%%%%%%%Manifold Package%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%Miscellaneous%%%%%%%%%%%%%
+\DeclareMathOperator{\diam}{diam}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\uln}[1]{\underline{#1}}%underline
+\newcommand{\topic}[1]{\noindent{\textbf{#1}}}
+\newcommand{\ud}[1]{\underline{#1}}%underline
+\newcommand{\df}[1]{\overset{def}{#1}}%Definition
+\newcommand{\cl}[1]{\overline{#1}}%closed 
+\newcommand{\tcr}[1]{\textcolor{red}{#1} }%textcolor red
+\newcommand{\xra}[3]{#1 \xrightarrow{#2} #3}%xrightarrow
+\newcommand{\ed}[2]{|#1-#2|}%Euclidean Distance
+\newcommand{\sqc}[3]{#1 \rightarrow #2, \ as \  #3 \rightarrow \infty}%sequence converges
+\newcommand{\bij}{\longleftrightarrow}
+\newcommand{\ctd}{$\longrightarrow \longleftarrow $}
+\newcommand{\bc}[2]{\genfrac{(}{)}{0pt}{}{#1}{#2}}
+\newcommand{\ovs}[2]{\overset{#1}{#2}}%overset
+\newcommand{\ssmm}[2]{\sum\limits_{\substack{#1}}^{#2}}%sum
+\newcommand{\pprr}[2]{\prod\limits_{#1}^{#2}}%product
+\newcommand{\uunn}[2]{\bigcup_{#1}^{#2}}%union
+\newcommand{\iinn}[2]{\bigcap_{#1}^{#2}}%intersection
+%\newcommand{\9}[2]{(#1)#2}
+%\newcommand{\m}[2]{$#1$#2}
+%%%%%%%%%%%%%Miscellaneous%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%Diagram%%%%%%%%%%%%%
+\usetikzlibrary{decorations.pathmorphing}
+\newlength{\LETTERheight}
+\AtBeginDocument{\settoheight{\LETTERheight}{I}}
+\newcommand{\longleadsto}{\ \raisebox{0.24\LETTERheight}{\tikz \draw [->,
+line join=round,
+decorate, decoration={
+    zigzag,
+    segment length=4,
+    amplitude=.9,
+    post=lineto,
+    post length=2pt
+}] (0,0) -- (1,0);}\ }
+\newcommand{\ttt}{$(X,\TT)$}
+\newcommand{\F}{\mathbb{F}}
+
+\newcommand{\mxsq}[4]{
+\begin{pmatrix}
+#1 &\dots & #2 \\
+ \vdots & \ddots & \vdots \\
+ #3 &\dots & #4
+\end{pmatrix}
+}%matrix of square form
+\newcommand{\mxc}[2]{
+\begin{pmatrix}
+#1  \\
+ \vdots \\
+ #2 
+\end{pmatrix}
+}%matrix of column form
+%diagram
+\usepackage{tikz}
+\usetikzlibrary{calc,decorations.pathmorphing,shapes}
+
+\newcounter{sarrow}
+\newcommand\xrsquigarrow[1]{%
+\stepcounter{sarrow}%
+\mathrel{\begin{tikzpicture}[baseline= {( $ (current bounding box.south) + (0,-0.5ex) $ )}]
+\node[inner sep=.5ex] (\thesarrow) {$\scriptstyle #1$};
+\path[draw,<-,decorate,
+  decoration={zigzag,amplitude=0.7pt,segment length=1.2mm,pre=lineto,pre length=4pt}] 
+    (\thesarrow.south east) -- (\thesarrow.south west);
+\end{tikzpicture}}%
+}
+\newcommand{\nm}[1]{\left\lVert#1\right\rVert}
+\tikzset{
+  symbol/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+  }
+}
+\newcommand{\fm}[5]{%function map
+  \begin{tikzcd}[
+    column sep=2em,
+    row sep=1ex,
+    ampersand replacement=\&
+  ]
+  #1\colon \&[-3em]
+  #2\vphantom{#3} \arrow[r] \&
+  #3\vphantom{#2} \\
+  \&
+  #4\vphantom{#5} \arrow[u,symbol=\in] \arrow[r,mapsto] \&
+  #5\vphantom{#4} \arrow[u,symbol=\in]
+  \end{tikzcd}%
+}
+\newcommand{\fsq}[8]{
+\begin{center}
+	\begin{tikzcd}[
+%    column sep=1em,
+%    row sep=0.3 ex,
+    ampersand replacement=\&
+  ]
+  #1 \ar[d,"#4",swap] \ar[r,"#2"]\&  #3 \ar[d,"#5"] \\
+  #6 \ar[r,"#7",red,dashed,swap]\&  #8
+	\end{tikzcd}
+\end{center}
+
+}
+\newcommand{\fsqm}[8]{%function square of maps
+\begin{center}
+	\begin{tikzcd}[
+%    column sep=1em,
+%    row sep=0.3 ex,
+    ampersand replacement=\&
+  ]
+  	#1 \ar[d,"#4",swap,symbol=\longleadsto ] 				\ar[r,"#2",symbol=\longleadsto]\&  #3 					\ar[d,"#5",symbol=\longleadsto] \\
+  	#6 \ar[r,"#7",red,swap,symbol=\longleadsto]\&  #8
+	\end{tikzcd}
+\end{center}
+}
+\newcommand{\fs}[4]{%function subset
+\begin{tikzcd}[
+    column sep=1em,
+    row sep=0.3 ex,
+    ampersand replacement=\&
+  ]
+#1 
+\\#2 \ar[u, symbol=\subseteq] \ar[r,"#3"] \& #4
+\end{tikzcd}
+}
+\newcommand{\fq}[3]{%function of quotients
+\begin{center}
+\begin{tikzcd}[
+%    column sep=1em,
+%    row sep=1 ex,
+    ampersand replacement=\&
+  ]
+#1 \ar[d,"\pi"] \ar[r,"#2"] \& #3 
+\\ \bar{#1} \ar[ru,"\bar{#2} ",dashed, purple]
+\end{tikzcd}	
+\end{center}
+}
+
+\newcommand{\fc}[5]{% function comment
+  \begin{tikzcd}[
+    column sep=1em,
+    row sep=0.3 ex,
+    ampersand replacement=\&
+  ]
+  #1\colon \&[-3em]
+  #2\vphantom{#3} \arrow[r] \&
+  #3\vphantom{#2} \\
+  \&
+  #4\vphantom{#5}  \&
+  #5\vphantom{#4} 
+  \end{tikzcd}%
+}
+\newcommand{\mmp}[3]{\begin{tikzcd}[ampersand replacement=\&]  #1 \ar[r,"#2"] \& #3 \end{tikzcd}}%map
+\newcommand{\fp}[4]{
+$\begin{cases}
+	#1 & #2 \\
+	#3 & #4 \\
+\end{cases}$}%function (piecewise)
+%%%%%%%%%%%%%Diagram%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%Mathematical Environments%%%%%%%%%%%%%
+\numberwithin{equation}{section}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{exa}{Example}[section]
+\newtheorem{nex}{Non-Example}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rec}{\uln{Recall}}
+\newtheorem*{rem}{\uln{Remark}}
+\newtheorem*{nota}{\uln{Notation}}
+\newtheorem*{term}{\uln{Terminology}}
+\newtheorem*{question}{\uln{Question}}
+\newtheorem{exe}{\uln{Exescise}}[section]
+%%%%%%%%%%%%%Mathematical Environments%%%%%%%%%%%%%
+
